@@ -129,10 +129,10 @@ public class Vehicles {
 				"  _\n";
 		for( int i=1 ; i< 5 ; i++ ) {
 			if( openDoors.contains(String.valueOf(i)) ) {
-				result += (i%2==0)?"\\\n":" /";
+				result += (i%2==0)?(i==2)?" \\\n":"\\\n":" /";
 			}
 			else {
-				result += (i%2==0)?(i!=4)?"|\n":"|":(i==3)?" |":" | ";
+				result += (i%2==0)?(i==4)?"|":" |\n":" |";
 			}
 			
 			result += i==3?"_":"";
