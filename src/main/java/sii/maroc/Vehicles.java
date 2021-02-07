@@ -20,6 +20,7 @@ public class Vehicles {
 	 * @param description
 	 */
 	public Vehicles(String description) {
+		
 		List<String> consumptions = Arrays.asList(description.split(","));
 		
 		this.diesel = getGasConsumtionPercentage(consumptions.get(0));
@@ -27,7 +28,6 @@ public class Vehicles {
 		this.fuel = getGasConsumtionPercentage(consumptions.get(1));
 		
 		this.hybrid = getGasConsumtionPercentage(consumptions.get(2));
-
 	}
 
 
@@ -39,7 +39,7 @@ public class Vehicles {
 	 * @return A String representing the vehicle state
 	 */
 	public String move(String vehicleType, String gasType, String closedDoors, String distance) {
-
+		
 		Set<String> closedDoorsSet = new HashSet<String>(Arrays.asList(closedDoors.split(" ")));
 		Set<String> openDoorsSet = null;
 		String result = null;
@@ -68,6 +68,7 @@ public class Vehicles {
 	 * @return Corresponding gas consumption in liter
 	 */
 	public float getGasConsumption(String gasType, String distance) {
+		
 		float consumption = 0;
 		
 		if( gasType.equals("Diesel") ) {
@@ -89,6 +90,7 @@ public class Vehicles {
 	 * @return Set containing open doors 
 	 */
 	static public Set<String> getOpenDoors(String vehicleType, Set<String> closedDoorsSet){
+		
 		Set<String> openDoorsSet = new HashSet<String>(Arrays.asList("1","2","3","4"));
 		
 		if( vehicleType.equalsIgnoreCase("truck") ) {
@@ -108,6 +110,7 @@ public class Vehicles {
 	 * @return percentage of gas consumption - for Example : 5
 	 */
 	static public float getGasConsumtionPercentage(String consumption) {
+		
 		return Float.parseFloat(consumption.
 				substring(consumption.indexOf(":")+1, consumption.indexOf("%")));
 	}
@@ -125,6 +128,7 @@ public class Vehicles {
           
         ************/
 	static public String getCarShape(Set<String> openDoors) {
+		
 		String result = "DOORS KO, BLOCKED \n"+
 				"  _\n";
 		for( int i=1 ; i< 5 ; i++ ) {
